@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thị Thúy Oanh - Portfolio Cá Nhân</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter cho font chữ hiện đại, tối giản -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome cho các Icon thông tin liên hệ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800 selection:bg-emerald-100 selection:text-emerald-900 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-zinc-100">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-sm font-semibold tracking-wider uppercase text-zinc-900">NTTO.Portfolio</a>
+            <nav class="hidden md:flex space-x-8 text-xs font-medium tracking-wider uppercase text-zinc-500">
+                <a href="#about" class="hover:text-emerald-600 transition-colors">Giới thiệu</a>
+                <a href="#education" class="hover:text-emerald-600 transition-colors">Học vấn</a>
+                <a href="#experience" class="hover:text-emerald-600 transition-colors">Kinh nghiệm</a>
+                <a href="#skills" class="hover:text-emerald-600 transition-colors">Kỹ năng</a>
+                <a href="#contact" class="hover:text-emerald-600 transition-colors">Liên hệ</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden text-zinc-600 cursor-pointer" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-zinc-100 px-6 py-4 space-y-3 text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <a href="#about" onclick="toggleMenu()" class="block hover:text-emerald-600 py-1">Giới thiệu</a>
+            <a href="#education" onclick="toggleMenu()" class="block hover:text-emerald-600 py-1">Học vấn</a>
+            <a href="#experience" onclick="toggleMenu()" class="block hover:text-emerald-600 py-1">Kinh nghiệm</a>
+            <a href="#skills" onclick="toggleMenu()" class="block hover:text-emerald-600 py-1">Kỹ năng</a>
+            <a href="#contact" onclick="toggleMenu()" class="block hover:text-emerald-600 py-1">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Hero / Giới thiệu tổng quan -->
+    <section id="about" class="pt-32 pb-20 px-6 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-2 space-y-6">
+            <span class="text-xs font-semibold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-3 py-1 rounded">Thực tập sinh Nông nghiệp</span>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
+                Nguyễn Thị Thúy Oanh
+            </h1>
+            <p class="text-zinc-600 leading-relaxed text-base max-w-2xl">
+                Hướng đến nghiên cứu vi sinh vật đất, sức khỏe đất và các biện pháp phòng trừ tuyến trùng ký sinh trên hệ thống canh tác lúa và rau màu. Mong muốn ứng dụng kiến thức chuyên sâu để đề xuất giải pháp canh tác bền vững, nâng cao năng suất và chất lượng nông sản Việt.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-4 text-xs font-medium">
+                <a href="#contact" class="bg-zinc-900 hover:bg-zinc-800 text-white px-5 py-3 rounded transition-colors tracking-wide">
+                    Liên hệ với tôi
+                </a>
+                <a href="#experience" class="border border-zinc-200 hover:border-zinc-400 text-zinc-600 px-5 py-3 rounded transition-all tracking-wide">
+                    Xem kinh nghiệm
+                </a>
+            </div>
+        </div>
+        <!-- Hình ảnh cá nhân (Placeholder Avatar tối giản) -->
+        <div class="flex justify-center">
+            <div class="relative w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-sm bg-zinc-200 group border border-zinc-100">
+                <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-transparent z-10"></div>
+                <!-- Bạn có thể thay đoạn <svg> này bằng thẻ <img> chứa ảnh thật của mình -->
+                <svg class="w-full h-full text-zinc-400 bg-zinc-100 p-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thông tin chi tiết cá nhân -->
+    <section class="bg-white border-y border-zinc-100 py-10 px-6">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider text-zinc-400">Ngày sinh</span>
+                <p class="text-sm font-medium text-zinc-900">24/02/2003</p>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider text-zinc-400">Giới tính</span>
+                <p class="text-sm font-medium text-zinc-900">Nữ</p>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider text-zinc-400">Chuyên ngành</span>
+                <p class="text-sm font-medium text-zinc-900">Nông nghiệp CNC</p>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider text-zinc-400">Nơi sinh sống</span>
+                <p class="text-sm font-medium text-zinc-900">Đông Thuận, Cần Thơ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Học vấn -->
+    <section id="education" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-zinc-400 sticky top-24">Học vấn</h2>
+            </div>
+            <div class="md:col-span-2 space-y-10">
+                <div class="group border-l-2 border-zinc-200 hover:border-emerald-500 pl-6 transition-colors duration-300">
+                    <span class="text-xs font-medium text-zinc-400 block mb-1">2021 - 2025</span>
+                    <h3 class="text-lg font-semibold text-zinc-950 group-hover:text-emerald-600 transition-colors">Đại Học Cần Thơ</h3>
+                    <p class="text-sm text-zinc-500 mt-1">Chuyên ngành: Nông nghiệp công nghệ cao</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kinh nghiệm làm việc -->
+    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto border-t border-zinc-100">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-zinc-400 sticky top-24">Kinh nghiệm</h2>
+            </div>
+            <div class="md:col-span-2 space-y-12">
+                <!-- Kinh nghiệm 1 -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-zinc-950">Phòng thí nghiệm Tuyến trùng học</h3>
+                            <p class="text-sm text-emerald-700 font-medium mt-0.5">Sinh viên thực hiện luận văn tốt nghiệp</p>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-400 shrink-0 bg-zinc-100 px-2 py-1 rounded">07/2024 - 05/2025</span>
+                    </div>
+                    <div class="text-sm text-zinc-600 leading-relaxed space-y-2">
+                        <p class="font-medium text-zinc-800 italic">Đề tài: "Nghiên cứu quần xã tuyến trùng ký sinh trên lúa ở ĐBSCL"</p>
+                        <p>Ứng dụng trực tiếp vào nghiên cứu sức khỏe đất, chẩn đoán và đưa ra giải pháp phòng trừ bệnh:</p>
+                        <ul class="list-disc list-inside pl-1 space-y-1">
+                            <li>Trực tiếp khảo sát và thu mẫu đất, rễ lúa tại các tỉnh thuộc Đồng bằng sông Cửu Long (ĐBSCL).</li>
+                            <li>Thực hiện xử lý mẫu, phân lập tuyến trùng và tiến hành quan sát định danh dưới kính hiển vi chuyên dụng.</li>
+                            <li>Làm các tiêu bản nghiên cứu cố định và tiến hành phân loại khoa học.</li>
+                            <li>Ghi nhận, quản lý và thống kê hệ thống số liệu khoa học phục vụ phân tích kết quả nghiên cứu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kinh nghiệm 2 -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-semibold text-zinc-950">Công ty TNHH Dalat Hasfarm</h3>
+                            <p class="text-sm text-emerald-700 font-medium mt-0.5">Thực tập sinh sản xuất</p>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-400 shrink-0 bg-zinc-100 px-2 py-1 rounded">06/2024 - 07/2024</span>
+                    </div>
+                    <div class="text-sm text-zinc-600 leading-relaxed space-y-2">
+                        <p>Tham gia học tập và làm việc trực tiếp tại cơ sở Đơn Dương trong hệ thống nhà kính sản xuất hoa hiện đại:</p>
+                        <ul class="list-disc list-inside pl-1 space-y-1">
+                            <li>Tiếp cận và vận hành các bước trong mô hình canh tác hoa chất lượng cao tiêu chuẩn quốc tế.</li>
+                            <li>Thực hiện chăm sóc cây trồng chuyên sâu: Xuống giống cây con, điều chỉnh sinh trưởng qua việc cắt tỉa nụ hoa định kỳ.</li>
+                            <li>Tham gia trực tiếp quy trình thu hoạch khép kín: Cắt hoa theo tiêu chuẩn kỹ thuật thương mại, phân loại chất lượng nghiêm ngặt, đóng gói thành phẩm và bảo quản lạnh.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kỹ năng & Chứng chỉ -->
+    <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-zinc-100">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-zinc-400 sticky top-24">Năng lực cá nhân</h2>
+            </div>
+            <div class="md:col-span-2 space-y-10">
+                <!-- Chuyên môn chính -->
+                <div class="space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider uppercase text-zinc-900">Kỹ năng chuyên môn</h3>
+                    <div class="bg-white p-6 rounded-xl border border-zinc-100 shadow-sm space-y-2">
+                        <h4 class="text-sm font-semibold text-zinc-900">Định danh và phân loại tuyến trùng thực vật</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            Thành thạo kỹ năng dã ngoại thu mẫu đất diện rộng tại các tỉnh ĐBSCL, quy trình xử lý mẫu đất và rễ sinh học, kỹ thuật làm tiêu bản hiển vi, quan sát hình thái học phục vụ phân loại định danh chính xác các bộ tuyến trùng gây hại.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Chứng chỉ -->
+                <div class="space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider uppercase text-zinc-900">Chứng chỉ ngoại ngữ & tin học</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg border border-zinc-100 flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">EN</div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-zinc-950">Chứng chỉ TOEIC</h4>
+                                <p class="text-[11px] text-zinc-400">Năm cấp: 2025</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-zinc-100 flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded bg-zinc-100 text-zinc-700 flex items-center justify-center text-xs"><i class="fa-solid fa-desktop"></i></div>
+                            <div>
+                                <h4 class="text-xs font-semibold text-zinc-950">Ứng dụng CNTT Cơ Bản</h4>
+                                <p class="text-[11px] text-zinc-400">Năm cấp: 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-zinc-100">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-zinc-400 sticky top-24">Kết nối</h2>
+            </div>
+            <div class="md:col-span-2 space-y-8">
+                <h3 class="text-xl font-bold text-zinc-950 tracking-tight">Hãy cùng hợp tác phát triển nông nghiệp bền vững</h3>
+                <p class="text-sm text-zinc-500 leading-relaxed">
+                    Nếu bạn đang tìm kiếm một nhân sự chuyên sâu về sức khỏe đất, nghiên cứu vi sinh vật hoặc có nhu cầu hợp tác triển khai dự án khảo sát tuyến trùng khu vực ĐBSCL, vui lòng liên hệ trực tiếp qua thông tin bên dưới:
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <a href="mailto:nguyenthithuyoanh0324@gmail.com" class="p-4 rounded-xl bg-white border border-zinc-100 hover:border-emerald-500 transition-all group flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-zinc-50 group-hover:bg-emerald-50 text-zinc-500 group-hover:text-emerald-700 flex items-center justify-center transition-colors">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-zinc-400 block">Email trực tiếp</span>
+                            <span class="text-xs font-medium text-zinc-800 break-all">nguyenthithuyoanh0324@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:0837028639" class="p-4 rounded-xl bg-white border border-zinc-100 hover:border-emerald-500 transition-all group flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-zinc-50 group-hover:bg-emerald-50 text-zinc-500 group-hover:text-emerald-700 flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-zinc-400 block">Số điện thoại</span>
+                            <span class="text-xs font-medium text-zinc-800">0837028639</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-100 py-8 px-6 text-center text-xs text-zinc-400 bg-white">
+        <p>© 2026 Nguyễn Thị Thúy Oanh. Phát triển trên triết lý tối giản và chuyên nghiệp.</p>
+    </footer>
+
+    <!-- Script điều khiển Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
